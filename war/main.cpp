@@ -9,10 +9,11 @@ Deck d1;
 
 d1.createDeck();
 d1.printDeck();
+
+std::cout << std::endl;
+
 d1.shuffleDeck();
 d1.printDeck();
-std::cout << std::endl;
-d1.checkRand();
 
 
 return 0;
