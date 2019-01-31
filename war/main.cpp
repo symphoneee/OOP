@@ -9,7 +9,7 @@ int main(){
 
 Rank r1 = Ace;
 Suit s1 = Clubs;
-
+ 
 Rank r2 = Queen;
 Suit s2 = Hearts;
 
@@ -18,6 +18,8 @@ Deck d1;
 
 d1.createDeck();
 d1.shuffleDeck();
+d1.printSingle(52);
+d1.printDeck();
 
 /*
 std::cout << c1.getRank() << std::endl;

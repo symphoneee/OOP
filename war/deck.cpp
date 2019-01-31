@@ -24,13 +24,11 @@ void Deck::shuffleDeck() {
 }
 
 
-/*
+
 void Deck::printSingle(int i){
 
 	std::cout << deck[i] << std::endl;
 }
-
-
 
 
 void Deck::printDeck() {
@@ -38,10 +36,8 @@ void Deck::printDeck() {
 	else {
 		for(int i = 0; i <= deck.size(); ++i) {
 			std::cout << deck[i];
+			std::cout << std::endl;
 		}
 	}
 	std::cout << std::endl;
 }
-
-
-*/
