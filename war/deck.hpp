@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "card.hpp"
 #include <vector>
 
@@ -10,8 +9,6 @@ struct Deck {
 	void shuffleDeck();
 	void printDeck();
 	void printSingle(int);
-
-
-};
+	};
 
 

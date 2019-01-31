@@ -36,7 +36,6 @@ public:
 
 	int getNumber ();
 
-
 private:
 	Rank r;
 	Suit s;
