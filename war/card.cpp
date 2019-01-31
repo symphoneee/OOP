@@ -37,7 +37,7 @@ std::ostream& operator<<(std::ostream& os, Rank rank) {
 
 std::ostream& operator<<(std::ostream& os, Suit suit) {
   switch (suit) {
-    case Hearts:  os << 'A';
+    case Hearts:  os << 'H';
       break;
     case Diamonds:  os << 'D';
       break;
