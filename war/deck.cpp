@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <random>
-#include <algorithm>
 #include <random>
 
 void Deck::createDeck() {

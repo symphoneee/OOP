@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-
-
 std::ostream& operator<<(std::ostream& os, Rank rank) {
   switch (rank) {
 

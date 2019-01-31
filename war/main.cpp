@@ -2,21 +2,21 @@
 #include "DECK.HPP"
 
 #include<iostream>
-#include <vector>
 
 int main(){
 
-
-Rank r1 = Ace;
-Suit s1 = Clubs;
-
-Card c1(r1, s1);
-
 Deck d1;
+Deck d2;
 
 d1.createDeck();
 d1.shuffleDeck();
+d2.createDeck();
+d2.shuffleDeck();
+
 d1.printDeck();
+d2.printDeck();
+
+
 
 return 0;
 };
