@@ -33,8 +33,6 @@ public:
 	Rank getRank () const { return r;}
 	Suit getSuit () const { return s;}
 
-	int getNumber ();
-
 private:
 	Rank r;
 	Suit s;

@@ -1,19 +1,16 @@
-#include "CARD.HPP"
-#include "DECK.HPP"
+#include "card.hpp"
+#include "deck.hpp"
+#include "player.hpp"
 
 #include<iostream>
 
 int main(){
 
-Deck d1;
+Player p1;
+Player p2;
 
-d1.createDeck();
-d1.printDeck();
-
-std::cout << std::endl;
-
-d1.shuffleDeck();
-d1.printDeck();
+p1.createDeck();
+p1.printDeck();
 
 
 return 0;

@@ -18,6 +18,7 @@ void Deck::shuffleDeck() {
 	std::random_device rd;
 	std::mt19937 g(rd());
 	std::shuffle(deck.begin(), deck.end(), g);
+	Deck d1;
 	}
 
 
