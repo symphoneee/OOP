@@ -5,4 +5,5 @@ add_executable(war
 	card.cpp
 	deck.cpp
     player.cpp
+    war.cpp
 	)

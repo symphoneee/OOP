@@ -8,6 +8,7 @@ struct Player {
 	Deck deck;
 	int score;
 	int wins;
+	int cardsLeft;
 
 	void createDeck();
 	void printDeck();
