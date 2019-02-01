@@ -11,4 +11,6 @@ struct Player {
 
 	void createDeck();
 	void printDeck();
+	void printCard(int);
+	void getRank(int);
 };

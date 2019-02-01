@@ -8,6 +8,8 @@ struct Deck {
 	void createDeck();
 	void shuffleDeck();
 	void printDeck();
+	void printCard(int);
+	void getRank(int);
 	};
 
 
