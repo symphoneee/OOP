@@ -1,6 +1,3 @@
-#include "card.hpp"
-#include "deck.hpp"
-#include "player.hpp"
 #include "War.hpp"
 
 #include <iostream>

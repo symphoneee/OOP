@@ -28,7 +28,6 @@ void Deck::printDeck() {
 
 void Deck::printCard(int i) {
 		std::cout << deck[i];
-		std::cout << std::endl;
 	}
 
 void Deck::getRank(int r) {
