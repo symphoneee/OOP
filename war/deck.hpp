@@ -10,6 +10,8 @@ struct Deck {
 	void printDeck();
 	void printCard(int);
 	void getRank(int);
+	int returnInt(Card);
+	Rank returnRank(int);
 	};
 
 

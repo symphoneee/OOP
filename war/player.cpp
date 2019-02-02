@@ -17,9 +17,10 @@ void Player::printCard(int i) {
 	deck.printCard(i);
 	}
 
-void Player::getRank(int i) {
-	deck.getRank(i);
+Rank Player::returnRank(int r) {
+	return deck.returnRank(r);
 	}	
+	
 
 
 

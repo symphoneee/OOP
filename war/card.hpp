@@ -33,6 +33,8 @@ public:
 	Rank getRank () const { return r;}
 	Suit getSuit () const { return s;}
 
+	int getInt(Card);
+
 private:
 	Rank r;
 	Suit s;
