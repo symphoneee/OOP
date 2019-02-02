@@ -30,10 +30,6 @@ void Deck::printCard(int i) {
 		std::cout << deck[i];
 	}
 
-void Deck::getRank(int r) {
-	std::cout << deck[r].getRank() << std::endl;
-}
-
 Rank Deck::returnRank(int r){
 	return deck[r].getRank();
 }
