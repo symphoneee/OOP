@@ -52,3 +52,32 @@ std::ostream& operator<<(std::ostream& os, Suit suit) {
 std::ostream& operator<<(std::ostream& os, Card card) {
   return os << card.getRank() << card.getSuit();
 }
+
+bool operator==(Card a, Card b) {
+    return a.getRank() == b.getRank() && a.getSuit() == b.getSuit();
+}
+
+bool operator!=(Card a, Card b) {
+    return!(a == b);
+}
+
+bool operator<(Card a, Card b) {
+    if(a.getSuit() < b.getSuit())
+        return true;
+    if(b.getSuit() < a.getSuit())
+        return false;
+    return a.getRank() < b.getRank();
+}
+
+bool operator>(Card a, Card b) {
+    return (b < a);
+}
+
+bool operator<=(Card a, Card b) {
+    return !(b < a);
+}
+
+bool operator >=(Card a, Card b) {
+    return !(a < b);
+}
+

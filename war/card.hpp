@@ -1,6 +1,7 @@
 #pragma once
 
 #include<iostream>
+#include<deque>
 
 enum Rank {
 	Two,
@@ -28,10 +29,13 @@ enum Suit {
 class Card {
 public:
 	Card();
-	Card(Rank rank, Suit suit) : r(rank), s(suit) {}
+	Card(Rank rank, Suit suit) : data(static_cast<unsigned>(suit) << 4 | 
+		static_cast<unsigned>(rank)) {}
 
-	Rank getRank () const { return r;}
-	Suit getSuit () const { return s;}
+	int data;
+
+	Rank getRank () const { return static_cast<Rank>(data& 0xf);}
+	Suit getSuit () const { return static_cast<Suit>(data >> 4);}
 
 	int getInt(Card);
 
@@ -43,4 +47,16 @@ private:
 std::ostream& operator<<(std::ostream& os, Card card);
 std::ostream& operator<<(std::ostream& os, Rank rank);
 std::ostream& operator<<(std::ostream& os, Suit suit);
+
+bool operator==(Card a, Card b);
+
+bool operator!=(Card a, Card b);
+
+bool operator<(Card a, Card b);
+
+bool operator>(Card a, Card b);
+
+bool operator<=(Card a, Card b);
+
+bool operator>=(Card a, Card b);
 
