@@ -3,8 +3,6 @@
 #include <time.h>
 using namespace sf;
 
-#include "point.hpp"
-#include "check.hpp"
 #include "game.hpp"
 
 
