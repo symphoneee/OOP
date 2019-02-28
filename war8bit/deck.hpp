@@ -3,6 +3,7 @@
 #include "card.hpp"
 #include <vector>
 
+/*
 struct Deck {
 	std::vector<standCard> deck;
 	
@@ -13,5 +14,5 @@ struct Deck {
 	void printCard(int);
 	Rank returnRank(int);
 	};
-
+*/
 

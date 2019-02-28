@@ -49,6 +49,22 @@ std::ostream& operator<<(std::ostream& os, Suit suit) {
   return os;
 }
 
+std::ostream& operator<<(std::ostream& os, Deck const& d) {
+  int n = 0;
+  for (playCard c : d) {
+    os << c << ' ';
+    if (n == 12) {
+      os << '\n';
+      n = 0;
+    }
+    else {
+      ++n;
+    }
+  }
+  return os;
+}
+
+
 std::ostream& operator<<(std::ostream& os, Color color) {
 	return os << (color == Black ? "B" : "R");
 }

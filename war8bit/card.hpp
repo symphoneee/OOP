@@ -110,10 +110,11 @@ private:
 	cardInfo data;
 };
 
-/*struct Deck : std::deque<Card> {
-	using std::deque<Card>::deque;
+struct playCard : std::variant<standCard, jokerCard> {};
+
+struct Deck : std::deque<playCard> {
+	using std::deque<playCard>::deque;
 };
-*/
 
 std::ostream& operator<<(std::ostream& os, standCard card);
 std::ostream& operator<<(std::ostream& os, Rank rank);
@@ -121,7 +122,7 @@ std::ostream& operator<<(std::ostream& os, Suit suit);
 std::ostream& operator<<(std::ostream& os, Color color);
 std::ostream& operator<<(std::ostream& os, jokerCard joker);
 std::ostream& operator<<(std::ostream& os, playCard play);
-//std::ostream& operator<<(std::ostream& os, Deck const& d);
+std::ostream& operator<<(std::ostream& os, Deck const& d);
 
 bool operator==(standCard a, standCard b);
 

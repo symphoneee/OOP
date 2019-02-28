@@ -5,7 +5,7 @@
 #include <cstdlib>
 
 
-
+/*
 void Deck::createDeck() {
 	for(int s = Clubs; s <= Spades; ++s) {
 		for(int r = Two; r <= Ace; ++r) {
@@ -36,6 +36,6 @@ void Deck::printCard(int i) {
 Rank Deck::returnRank(int r){
 	return deck[r].getRank();
 }
-
+*/
 
 
