@@ -5,6 +5,7 @@
 
 
 int main(int argc, char* argv[]){
+	
 	Deck d {
     playCard{Ace, Spades},
     playCard{Two, Spades},
@@ -67,8 +68,9 @@ int main(int argc, char* argv[]){
   };
 
 std::cout << d << std::endl;
-//War war;
-//war.Play();
+
+War war;
+war.Play();
 
 return 0;
 };

@@ -25,8 +25,8 @@ void War::Play(){
 	int p1Rank;
 	int p2Rank;
 
-	//p1.createDeck();
-	//p2.createDeck();
+	p1.createDeck();
+	p2.createDeck();
 	
 
 	while(turns > 0){
