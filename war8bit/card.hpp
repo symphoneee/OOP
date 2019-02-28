@@ -5,6 +5,7 @@
 #include<iosfwd>
 #include<cassert>
 
+
 enum Rank {
 	Two,
 	Three,
@@ -41,18 +42,15 @@ enum cardKind {
 
 class standCard {
 public:
-	standCard();
-	standCard(Rank rank, Suit suit) : r(rank), s(suit) {}
-
-	/*data(static_cast<unsigned>(suit) << 4 | 
-		static_cast<unsigned>(rank)) {} */
-
 	int data;
 
-	Rank getRank () const { return r; }
-	Suit getSuit () const { return s; }
+	standCard();
+	standCard(Rank rank, Suit suit) : data(static_cast<unsigned>(suit) << 4 | 
+		static_cast<unsigned>(rank)) {};
 
-	int getInt(standCard);
+	Rank getRank () const { return static_cast<Rank>(data & 0xf); }
+	Suit getSuit () const { return static_cast<Suit>(data >> 4); }
+
 
 private:
 	Rank r;
