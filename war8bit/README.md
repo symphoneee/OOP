@@ -1,8 +1,4 @@
-# WAR
-Object Oriented Programming - Spring 2019
+#War 8-bit representation
 
-Implement the game of war using a tagged Union.
-
-In this version of my implementation I have used a tagged union in order
-to implement a joker card into the deck.  For now, the joker card only 
-holds the property of color, which is red or black. Every card, joker or regurlar, is now asserted to be a standard card.
+> In this implementation of war I have reduced the contents of rank and suit 
+to all fight inside the contents of an 8-bit intenger using bitwise function.s
