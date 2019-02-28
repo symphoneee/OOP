@@ -1,17 +1,13 @@
 #pragma once
 
-#include "card.hpp"
+#include "deck.hpp"
+
 #include <vector>
 
-struct Deck {
-	std::vector<Card> deck;
-	
+struct Player {
+	Deck deck;
 	void createDeck();
-	Deck makeDeck();
-	void shuffleDeck();
 	void printDeck();
 	void printCard(int);
 	Rank returnRank(int);
-	};
-
-
+};

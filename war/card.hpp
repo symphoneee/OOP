@@ -29,13 +29,15 @@ enum Suit {
 class Card {
 public:
 	Card();
-	Card(Rank rank, Suit suit) : data(static_cast<unsigned>(suit) << 4 | 
-		static_cast<unsigned>(rank)) {}
+	Card(Rank rank, Suit suit) : r(rank), s(suit) {}
+
+	/*data(static_cast<unsigned>(suit) << 4 | 
+		static_cast<unsigned>(rank)) {} */
 
 	int data;
 
-	Rank getRank () const { return static_cast<Rank>(data& 0xf);}
-	Suit getSuit () const { return static_cast<Suit>(data >> 4);}
+	Rank getRank () const { return r; }
+	Suit getSuit () const { return s; }
 
 	int getInt(Card);
 
@@ -44,9 +46,15 @@ private:
 	Suit s;
 };
 
+/*struct Deck : std::deque<Card> {
+	using std::deque<Card>::deque;
+};
+*/
+
 std::ostream& operator<<(std::ostream& os, Card card);
 std::ostream& operator<<(std::ostream& os, Rank rank);
 std::ostream& operator<<(std::ostream& os, Suit suit);
+//std::ostream& operator<<(std::ostream& os, Deck const& d);
 
 bool operator==(Card a, Card b);
 

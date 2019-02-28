@@ -4,7 +4,7 @@
 #include <vector>
 
 struct Deck {
-	std::vector<Card> deck;
+	std::vector<standCard> deck;
 	
 	void createDeck();
 	Deck makeDeck();

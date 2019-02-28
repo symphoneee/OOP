@@ -9,7 +9,7 @@
 void Deck::createDeck() {
 	for(int s = Clubs; s <= Spades; ++s) {
 		for(int r = Two; r <= Ace; ++r) {
-			Card temp(static_cast<Rank>(r), static_cast<Suit>(s));
+			standCard temp(static_cast<Rank>(r), static_cast<Suit>(s));
 			deck.push_back(temp);
 			}
 		}
