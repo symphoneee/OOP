@@ -64,6 +64,10 @@ std::ostream& operator<<(std::ostream& os, standCard card) {
   return os << card.getRank() << card.getSuit();
 }
 
+std::ostream& operator<<(std::ostream& os, jokerCard joker) {
+  return os << joker.getColor();
+}
+
 bool operator==(standCard a, standCard b) {
     return a.getRank() == b.getRank() && a.getSuit() == b.getSuit();
 }
