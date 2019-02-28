@@ -1,8 +1,8 @@
 #pragma once
-
-#include "deck.hpp"
+#include "card.hpp"
 
 #include <vector>
+
 
 struct Player {
 	Deck deck;

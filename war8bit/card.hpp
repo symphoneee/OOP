@@ -7,6 +7,7 @@
 
 
 enum Rank {
+	Ace,
 	Two,
 	Three,
 	Four,
@@ -19,14 +20,13 @@ enum Rank {
 	Jack,
 	Queen,
 	King,
-	Ace,
 };
 
 enum Suit {
+	Spades,
 	Clubs,
 	Diamonds,
 	Hearts,
-	Spades,
 };
 
 enum Color {
@@ -49,7 +49,7 @@ public:
 		static_cast<unsigned>(rank)) {};
 
 	Rank getRank () const { return static_cast<Rank>(data & 0xf); }
-	Suit getSuit () const { return static_cast<Suit>(data >> 4); }
+	Suit getSuit () const { return static_cast<Suit>(data >> 5); }
 
 
 private:
@@ -108,11 +108,12 @@ private:
 	cardInfo data;
 };
 
-struct playCard : std::variant<standCard, jokerCard> {};
+//struct playCard : std::variant<standCard, jokerCard> {};
 
 struct Deck : std::deque<playCard> {
 	using std::deque<playCard>::deque;
 };
+
 
 std::ostream& operator<<(std::ostream& os, standCard card);
 std::ostream& operator<<(std::ostream& os, Rank rank);

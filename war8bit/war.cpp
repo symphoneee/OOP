@@ -1,6 +1,6 @@
 #include "war.hpp"
 #include "player.hpp"
-#include "deck.hpp"
+
 
 #include <iostream>
 
@@ -25,21 +25,21 @@ void War::Play(){
 	int p1Rank;
 	int p2Rank;
 
-	p1.createDeck();
-	p2.createDeck();
+	//p1.createDeck();
+	//p2.createDeck();
 	
 
 	while(turns > 0){
 		std::cout << "P1 playing: ";
-		p1.printCard(temp);
+		//p1.printCard(temp);
 
 		std::cout << " ~vs~ P2 playing: ";
-		p2.printCard(temp);
+		//p2.printCard(temp);
 		std::cout << std::endl;
 		std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
 
-		p1Rank = p1.returnRank(temp);
-		p2Rank = p2.returnRank(temp);
+		//p1Rank = p1.returnRank(temp);
+		//p2Rank = p2.returnRank(temp);
 
 		if(p1Rank == p2Rank) {
 			int p11Rank;
@@ -56,12 +56,12 @@ void War::Play(){
 			std::cout << std::endl;
 			
 			std::cout << "P1 playing: ";
-			p1.printCard(temp);
-			p11Rank = p1.returnRank(temp);
+			//p1.printCard(temp);
+			//p11Rank = p1.returnRank(temp);
 
 			std::cout << " ~vs~ P2 playing: ";
-			p2.printCard(temp);
-			p22Rank = p2.returnRank(temp);
+			//p2.printCard(temp);
+			//p22Rank = p2.returnRank(temp);
 			std::cout << std::endl;
 
 			if(p11Rank > p22Rank) {

@@ -1,0 +1,3 @@
+/Users/trial/Desktop/code/OOP/OOP/war8bit/build/CMakeFiles/rebuild_cache.dir
+/Users/trial/Desktop/code/OOP/OOP/war8bit/build/CMakeFiles/edit_cache.dir
+/Users/trial/Desktop/code/OOP/OOP/war8bit/build/CMakeFiles/war.dir

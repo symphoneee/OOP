@@ -1,0 +1,1 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/war.dir/main.cpp.o CMakeFiles/war.dir/card.cpp.o CMakeFiles/war.dir/player.cpp.o CMakeFiles/war.dir/war.cpp.o  -o war 

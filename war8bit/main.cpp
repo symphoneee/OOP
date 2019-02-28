@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-int main(){
+
+int main(int argc, char* argv[]){
 	Deck d {
     playCard{Ace, Spades},
     playCard{Two, Spades},
