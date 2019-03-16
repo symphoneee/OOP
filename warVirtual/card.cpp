@@ -1,120 +1,80 @@
-#include "Card.hpp"
+#include "card.hpp"
 
 #include <iostream>
-#include <string>
 
-
-void standCard::print(standCard c) const {
-	std::string card;
-	char Rank = c.getRank();
-	char Suit = c.getSuit();
-
-switch (Suit) {
-		case Clubs: card = "C"; 
-		break;
-		case Diamonds: card = "D"; 
-		break;
-		case Hearts: card = "H"; 
-		break;
-		case Spades: card = "S"; 
-		break;
-	}
-
-switch (Rank) {
-		case Two: card = "2"; 
-		break;
-		case Three: card = "3"; 
-		break;
-		case Four: card = "4"; 
-		break;
-		case Five: card = "5"; 
-		break;
-		case Six: card = "6"; 
-		break;
-		case Seven: card = "7"; 
-		break;
-		case Eight: card = "8"; 
-		break;
-		case Nine: card = "9"; 
-		break;
-		case Ten: card = "10"; 
-		break;
-		case Jack: card = "J"; 
-		break;
-		case Queen: card = "Q"; 
-		break;
-		case King: card = "K"; 
-		break;
-		case Ace: card = "A"; 
-		break;
-	}
-
-	std::cout << "The card is: " << card << std::endl;
-
+std::ostream& operator<<(std::ostream& os, Suit suit) {
+  	switch (suit) {
+  		case Clubs: 
+  			return os << "C";
+  		case Spades: 
+  			return os << "S";
+  		case Hearts: 
+  			return os << "H";
+  		case Diamonds: 
+  			return os << "D";
+  	}
 }
 
-Color standCard::getColor(standCard c) const {
-	std::string color;
-	char color = c.getColor();
-
-
-switch (Suit) {
-		case Clubs: card = "C"; 
-		break;
-		case Diamonds: card = "D"; 
-		break;
-		case Hearts: card = "H"; 
-		break;
-		case Spades: card = "S"; 
-		break;
-	}
-
-	std::cout << "The color is: " << color << std::endl;
-
+std::ostream& operator<<(std::ostream& os, Rank rank) {
+  switch (rank) {
+  	case Ace: 
+  		return os << "A";
+  	case Two: 
+  		return os << "2";
+  	case Three: 
+  		return os << "3";
+  	case Four: 
+  		return os << "4";
+  	case Five: 
+  		return os << "5";
+  	case Six: 
+  		return os << "6";
+  	case Seven: 
+  		return os << "7";
+  	case Eight: 
+  		return os << "8";
+  	case Nine: 
+  		return os << "9";
+  	case Ten: 
+  		return os << "T";
+  	case Jack: 
+  		return os << "J";
+  	case Queen: 
+  		return os << "Q";
+  	case King: 
+  		return os << "K";
+  	}
 }
 
-Color jokerCard::getColor() const {
-	return color;
-}
-
-void jokerCard::print() const {
-	std::string jColor;
-	char color = c.getColor();
-
-
-switch (Suit) {
-		case Clubs: card = "Black"; 
-		break;
-		case Diamonds: card = "Red"; 
-		break;
-		case Hearts: card = "Red"; 
-		break;
-		case Spades: card = "Black"; 
-		break;
+void standCard::print(std::ostream& os) const {
+	os << *this;
 	}
 
-	std::cout << "The color is: " << jColor << std::endl;
-	
-
-}
-
-
-bool Card::isStand() const {
-	if (kind == Standard) {
-		return true;
-	} 
-	
-	else {
-		return false;
+void  jokerCard::print(std::ostream& os) const {
+	os << *this;
 	}
-}
 
-bool Card::isJoker() const {
-	if (kind == Joker) {
-		return true;
-	} 
-	
-	else {
-		return false;
+std::ostream& operator<<(std::ostream& os, vCard const& card) {
+	card.print(os);
+	return os;
 	}
+
+std::ostream& operator<<(std::ostream& os, Color card) { 
+	return os << (card == Black ? "Black" : "Red");
+	}
+
+std::ostream& operator<<(std::ostream& os, standCard const& card) {
+	return os << card.rank << card.suit;
+	}
+
+std::ostream& operator<<(std::ostream& os, jokerCard const& card) {
+	return os << card.color;
+	}
+
+std::ostream& operator<<(std::ostream& os, Deck const& deck) {
+	for (vCard const* card : deck) {
+  		os << *card << '\n';
+  }
+
+  return os;
 }

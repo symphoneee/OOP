@@ -1,11 +1,18 @@
 #pragma once
 
-#include<iostream>
-#include<deque>
-#include<iosfwd>
-#include<cassert>
+#include <deque>
+#include <iosfwd>
 
-enum Rank {
+
+enum Suit {
+	Spades,
+	Clubs,
+	Diamonds,
+	Hearts,
+	};
+
+enum Rank { 
+	Ace,
 	Two,
 	Three,
 	Four,
@@ -18,73 +25,56 @@ enum Rank {
 	Jack,
 	Queen,
 	King,
-	Ace,
-};
-
-enum Suit {
-	Clubs,
-	Diamonds,
-	Hearts,
-	Spades,
-};
+	};
 
 enum Color {
 	Black,
 	Red,
-};
+	};
 
 enum cardKind {
-	Standard,
+	Standard, 
 	Joker,
-};
+	};
 
-class vCard {
-public:
-    vCard(cardKind cKind) : kind(cKind) { }
+struct vCard {
+	virtual void print(std::ostream& os) const = 0;
+	virtual Color getColor() const = 0;
+	};
 
-    virtual void print() const = 0;
-    virtual Color getColor() const = 0;
+struct Deck : std::deque<vCard*> {
+	using std::deque<vCard*>::deque;
+	};
 
-    cardKind getKind();
+struct standCard : vCard {
+	standCard(Rank r, Suit s) : rank(r), suit(s) { }
 
-    bool isStand() const;
-    bool isJoker() const;
+	void print(std::ostream& os) const override;
 
-private:
-    cardKind kind;
-};
+	Color getColor() const override {
+    	return static_cast<Color>(suit > Diamonds);
+  		}
 
-class standCard : vCard {
-public:
-    standCard(Suit s, Rank r) : vCard(Standard), rank(r), suit(s) { }
-	
-	Rank getRank() const {return rank;}
-	Suit getSuit() const {return suit;}
+  	Rank rank;
+  	Suit suit;
+	};
 
-    void print(standCard) const override;
-    Color getColor() const override;
+struct jokerCard : vCard {
+	jokerCard(Color c) : color(c) { }
+  
+	void print(std::ostream& os) const override;
+  
+	Color getColor() const override {return color;}
 
-private:
-	Rank rank;
-	Suit suit;
-};
+	Color color;
+	};
 
-
-class jokerCard : vCard {
-public:
-    jokerCard(Color c) : vCard(Joker), color(c) { }
-    
-    Color getColor() const;
-    void print() const;
-
-private:
-    Color color;
-
-};
-
-
-
-
-
+std::ostream& operator<<(std::ostream& os, Suit s);
+std::ostream& operator<<(std::ostream& os, Rank r);
+std::ostream& operator<<(std::ostream& os, Color c);
+std::ostream& operator<<(std::ostream& os, vCard const& c);
+std::ostream& operator<<(std::ostream& os, Deck const& d);
+std::ostream& operator<<(std::ostream& os, standCard const& c);
+std::ostream& operator<<(std::ostream& os, jokerCard const& c);
 
 
