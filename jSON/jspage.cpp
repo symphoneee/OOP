@@ -1,6 +1,7 @@
 #include "jspage.hpp"
 
 #include <iostream>
+#include <vector>
 
  Jpage::jPrint(json::Value* val){
 
