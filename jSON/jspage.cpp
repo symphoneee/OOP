@@ -2,6 +2,21 @@
 
 #include <iostream>
 
+ Jpage::jPrint(json::Value* val){
+
+ 	std::cout << val.s1 << " " << val.s2 << std::end;
+
+ }
+
+  Jpage::jAssign(json::Value* val){
+
+ 	std::string s1 = val.findkey("author");
+ 	std::string s1 = val.findkey("title");
+
+ 	std::cout << s1 << " " << s2 << std::end;
+
+ }
+
 void Jpage::printReddit() {
 
     std::cout << "Author: " << wholePage.author << std::endl;
@@ -9,6 +24,8 @@ void Jpage::printReddit() {
   }
 
  Jpage::Jpage(json::Value* val){
+
+	int i = 0; 	
 
  	if (val[i] != wholePage.end()){
 
@@ -19,4 +36,7 @@ void Jpage::printReddit() {
  		val.push_back(r);
  
  	}
+
+ 	i++;
  }
+
