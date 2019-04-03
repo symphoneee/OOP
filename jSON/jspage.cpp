@@ -10,17 +10,13 @@ void Jpage::printReddit() {
 
  Jpage::Jpage(json::Value* val){
 
-int i = 0;
-
  	if (val[i] != wholePage.end()){
 
  		Reddit r;
 
- 		json::Value* userPostData = val[i].findkey("data");
+ 		json::Value* v = val[i].findkey("data");
 
  		val.push_back(r);
-
- 		i++;
- 		
+ 
  	}
  }
