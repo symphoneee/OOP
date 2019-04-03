@@ -29,11 +29,9 @@ void Jpage::printReddit() {
 
  	if (val[i] != wholePage.end()){
 
- 		Reddit r;
-
  		json::Value* v = val[i].findkey("data");
 
- 		val.push_back(r);
+ 		val.push_back(v);
  
  	}
 
