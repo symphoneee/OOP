@@ -10,8 +10,8 @@
 
   Jpage::jAssign(json::Value* val){
 
- 	std::string s1 = val.findkey("author");
- 	std::string s1 = val.findkey("title");
+ 	std::string s1 = val.findkey("Author");
+ 	std::string s1 = val.findkey("Title");
 
  	std::cout << s1 << " " << s2 << std::end;
 
@@ -27,11 +27,16 @@ void Jpage::printReddit() {
 
 	int i = 0; 	
 
+	std::vector<json::Value* Author> Authors;
+	std::vector<json::Value* Title> Titles;
+
  	if (val[i] != wholePage.end()){
 
- 		json::Value* v = val[i].findkey("data");
+ 		json::Value* a = val[i].findkey("Author");
+ 		json::Value* t = val[i].findkey("Title");
 
- 		val.push_back(v);
+ 		val.push_back(Authors);
+ 		val.push_back(Titles);
  
  	}
 
