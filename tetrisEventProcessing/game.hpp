@@ -1,0 +1,6 @@
+
+
+struct Tetris {
+	void play();
+
+};
